@@ -503,9 +503,147 @@
   @media (max-width: 380px) {
     .grid { grid-template-columns: 1fr; }
   }
+
+  /* === BGM 인디케이터 (우상단 floating) === */
+  .bgm-indicator {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 99;
+    background: rgba(13, 27, 51, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    color: var(--gold);
+    padding: 8px 14px 8px 12px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+  }
+  
+  .bgm-indicator.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .bgm-indicator:hover {
+    background: rgba(13, 27, 51, 1);
+    border-color: var(--gold);
+  }
+  
+  .bgm-indicator-icon {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 16px;
+  }
+  
+  .bgm-indicator-icon .bar {
+    width: 3px;
+    background: var(--gold-bright);
+    border-radius: 1px;
+    animation: equalizer 0.9s ease-in-out infinite;
+  }
+  
+  .bgm-indicator-icon .bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+  .bgm-indicator-icon .bar:nth-child(2) { height: 14px; animation-delay: 0.15s; }
+  .bgm-indicator-icon .bar:nth-child(3) { height: 10px; animation-delay: 0.3s; }
+  
+  @keyframes equalizer {
+    0%, 100% { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
+  }
+  
+  /* 음소거 상태 (애니메이션 정지) */
+  .bgm-indicator.muted .bgm-indicator-icon .bar {
+    animation-play-state: paused;
+    background: rgba(201, 169, 97, 0.4);
+  }
+  
+  .bgm-indicator.muted {
+    color: rgba(201, 169, 97, 0.7);
+  }
+  
+  /* 모바일에서 인디케이터 위치 조정 */
+  @media (max-width: 640px) {
+    .bgm-indicator {
+      top: 70px;
+      right: 12px;
+      padding: 7px 12px 7px 10px;
+      font-size: 12px;
+    }
+  }
+  
+  /* === 「소리 켜기」 토스트 안내 === */
+  .audio-unlock-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    z-index: 200;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 28px 14px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .audio-unlock-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+    animation: toast-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes toast-pulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4); }
+    50% { box-shadow: 0 8px 32px rgba(240, 200, 110, 0.7); }
+  }
+  
+  .audio-unlock-toast:hover {
+    background: var(--gold-bright);
+    transform: translateX(-50%) translateY(-4px);
+  }
+  
+  .audio-unlock-toast .icon {
+    font-size: 18px;
+  }
+
 </style>
 </head>
 <body>
+
+
+<!-- 「소리 켜기」 안내 토스트 (자동 unmute 실패 시 폴백) -->
+<div id="audioUnlockToast" class="audio-unlock-toast" role="button" tabindex="0">
+  <span class="icon">🎵</span>
+  <span>EP1 음악 듣기 — 여기를 누르세요</span>
+</div>
+
+<!-- 우상단 BGM 인디케이터 (자동재생 상태 시각화) -->
+<div id="bgmIndicator" class="bgm-indicator" aria-live="polite">
+  <div class="bgm-indicator-icon">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
+  <span class="bgm-indicator-text">BGM 재생 중</span>
+</div>
 
 <!-- BGM 컨트롤 (sticky) -->
 <div class="bgm-bar">
@@ -514,7 +652,7 @@
     <span id="bgmText">BGM 재생</span>
   </button>
   <span class="bgm-status">EP1 「창단의 열정」 음악 — 어쿠스틱 기타</span>
-  <audio id="bgmAudio" loop preload="auto">
+  <audio id="bgmAudio" loop autoplay muted playsinline preload="auto">
     <source src="audio/ep1_bgm.mp3" type="audio/mpeg">
   </audio>
 </div>
@@ -1020,27 +1158,178 @@
     if (e.key === 'ArrowRight') navLightbox(1);
   });
   
-  // === BGM 컨트롤 ===
+  // === BGM 하이브리드 자동재생 (방법 2 + 방법 3) ===
   const bgmBtn = document.getElementById('bgmBtn');
   const bgmIcon = document.getElementById('bgmIcon');
   const bgmText = document.getElementById('bgmText');
   const bgmAudio = document.getElementById('bgmAudio');
+  const indicator = document.getElementById('bgmIndicator');
+  const indicatorText = indicator.querySelector('.bgm-indicator-text');
+  const unlockToast = document.getElementById('audioUnlockToast');
   
-  bgmAudio.volume = 0.4;
+  const STORAGE_KEY = 'busong_ep1_bgm_pref';
+  const userPref = localStorage.getItem(STORAGE_KEY); // 'on' | 'off' | null
   
-  bgmBtn.addEventListener('click', () => {
-    if (bgmAudio.paused) {
-      bgmAudio.play().catch(err => console.log('재생 실패:', err));
+  bgmAudio.volume = 0.5;
+  
+  // ====================================================
+  // 상태 헬퍼
+  // ====================================================
+  function showIndicator(muted) {
+    indicator.classList.add('visible');
+    if (muted) {
+      indicator.classList.add('muted');
+      indicatorText.textContent = '🔇 음소거됨 — 클릭하여 듣기';
+    } else {
+      indicator.classList.remove('muted');
+      indicatorText.textContent = '♪ EP1 음악 재생 중';
+    }
+  }
+  
+  function syncBgmBtn() {
+    if (bgmAudio.paused || bgmAudio.muted) {
+      bgmIcon.textContent = '▶';
+      bgmText.textContent = bgmAudio.muted ? '소리 켜기' : 'BGM 재생';
+      bgmBtn.classList.remove('playing');
+    } else {
       bgmIcon.textContent = '❚❚';
       bgmText.textContent = 'BGM 일시정지';
       bgmBtn.classList.add('playing');
+    }
+  }
+  
+  function showUnlockToast() {
+    unlockToast.classList.add('show');
+  }
+  function hideUnlockToast() {
+    unlockToast.classList.remove('show');
+  }
+  
+  // ====================================================
+  // 단계 1: 음소거 자동재생 (모든 브라우저 허용)
+  // ====================================================
+  function startMutedAutoplay() {
+    bgmAudio.muted = true;
+    const promise = bgmAudio.play();
+    if (promise) {
+      promise.then(() => {
+        showIndicator(true);
+        syncBgmBtn();
+      }).catch(err => {
+        // 음소거 자동재생도 실패한 극단적 케이스 (인앱 브라우저 등)
+        console.log('음소거 자동재생 실패:', err);
+        showIndicator(true); // 인디케이터는 그대로 노출
+        showUnlockToast();   // 토스트 노출
+      });
+    }
+  }
+  
+  // ====================================================
+  // 단계 2: 첫 사용자 인터랙션 시 자동 unmute
+  // ====================================================
+  let unlocked = false;
+  function unlockAudio(event) {
+    if (unlocked) return;
+    
+    // 사용자가 명시적으로 "꺼두기"를 선택한 경우 자동 unmute 안 함
+    if (userPref === 'off') {
+      unlocked = true;
+      return;
+    }
+    
+    bgmAudio.muted = false;
+    
+    // 만약 이전에 paused 상태였다면 다시 play()
+    if (bgmAudio.paused) {
+      bgmAudio.play().catch(err => {
+        console.log('unmute 후 재생 실패:', err);
+        showUnlockToast();
+        return;
+      });
+    }
+    
+    unlocked = true;
+    showIndicator(false);
+    syncBgmBtn();
+    hideUnlockToast();
+    localStorage.setItem(STORAGE_KEY, 'on');
+    
+    // 모든 인터랙션 리스너 정리
+    ['touchstart', 'mousedown', 'keydown', 'scroll', 'click'].forEach(evt => {
+      window.removeEventListener(evt, unlockAudio, { capture: true });
+    });
+  }
+  
+  // 모든 인터랙션 이벤트 capture 단계에서 감지
+  ['touchstart', 'mousedown', 'keydown', 'scroll', 'click'].forEach(evt => {
+    window.addEventListener(evt, unlockAudio, { capture: true, passive: true });
+  });
+  
+  // ====================================================
+  // 단계 3: 토스트·인디케이터·BGM 버튼 클릭 시 즉시 unmute
+  // ====================================================
+  unlockToast.addEventListener('click', (e) => {
+    e.stopPropagation();
+    unlockAudio();
+  });
+  
+  indicator.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (bgmAudio.muted) {
+      unlockAudio();
     } else {
-      bgmAudio.pause();
-      bgmIcon.textContent = '▶';
-      bgmText.textContent = 'BGM 재생';
-      bgmBtn.classList.remove('playing');
+      // 이미 재생 중이면 일시정지 토글
+      bgmBtn.click();
     }
   });
+  
+  // ====================================================
+  // 폴백: 기존 sticky bar의 ▶ 버튼 (수동 컨트롤)
+  // ====================================================
+  bgmBtn.addEventListener('click', () => {
+    if (bgmAudio.paused || bgmAudio.muted) {
+      bgmAudio.muted = false;
+      bgmAudio.play().then(() => {
+        unlocked = true;
+        showIndicator(false);
+        syncBgmBtn();
+        hideUnlockToast();
+        localStorage.setItem(STORAGE_KEY, 'on');
+      }).catch(err => {
+        console.log('수동 재생 실패:', err);
+      });
+    } else {
+      bgmAudio.pause();
+      syncBgmBtn();
+      localStorage.setItem(STORAGE_KEY, 'off');
+    }
+  });
+  
+  // ====================================================
+  // 오디오 이벤트 동기화
+  // ====================================================
+  bgmAudio.addEventListener('play', syncBgmBtn);
+  bgmAudio.addEventListener('pause', syncBgmBtn);
+  bgmAudio.addEventListener('volumechange', syncBgmBtn);
+  
+  // ====================================================
+  // 페이지 진입 시 시작
+  // ====================================================
+  if (userPref === 'off') {
+    // 사용자가 이전에 끈 적 있으면 시작 안 함
+    showIndicator(true);
+    indicatorText.textContent = '♪ 음악 듣기';
+  } else {
+    // 그 외에는 음소거 자동재생 시도
+    startMutedAutoplay();
+    
+    // 4초 안에 unmute 안 되면 토스트로 유도
+    setTimeout(() => {
+      if (!unlocked && bgmAudio.muted) {
+        showUnlockToast();
+      }
+    }, 4000);
+  }
 </script>
 
 </body>

@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부송 20주년 EP1 「창단의 열정」 — 사진 아카이브</title>
+<meta name="description" content="2007~2010 익산 부송 배드민턴 클럽 창단 초기 사진 31장 전체 아카이브">
+<meta property="og:title" content="부송 20주년 EP1 「창단의 열정」 — 사진 아카이브">
+<meta property="og:description" content="2007년 1월 6일, 부송중학교 체육관에서 시작된 이야기. 31장의 기록.">
+<meta property="og:image" content="photos/01_20070106__Ub2e4_Uc6b4_Ub85c_Ub4dc.jpg">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --navy: #0D1B33;
+    --navy-deep: #08101F;
+    --navy-mid: #1A2A45;
+    --gold: #C9A961;
+    --gold-bright: #F0C870;
+    --cream: #F5EFD7;
+    --white: #FFFFFF;
+    --gray: #888;
+    --gray-light: #DDD;
+  }
+  
+  body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', '맑은 고딕', sans-serif;
+    background: var(--navy-deep);
+    color: var(--white);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  
+  /* === 상단 히어로 === */
+  .hero {
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(201, 169, 97, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .hero-label {
+    display: inline-block;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 6px 18px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+  
+  .hero-title {
+    font-size: clamp(44px, 8vw, 88px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 8px;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-title .gold {
+    color: var(--gold-bright);
+  }
+  
+  .hero-sub {
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: var(--gray-light);
+    margin-top: 24px;
+    font-weight: 400;
+  }
+  
+  .hero-meta {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  
+  .hero-meta span {
+    margin: 0 12px;
+  }
+  
+  /* === BGM 컨트롤 === */
+  .bgm-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13, 27, 51, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .bgm-btn {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .bgm-btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-1px);
+  }
+  
+  .bgm-btn.playing {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 8px 20px;
+  }
+  
+  .bgm-status {
+    font-size: 13px;
+    color: var(--gray-light);
+    font-weight: 400;
+  }
+  
+  /* === 인트로 텍스트 === */
+  .intro {
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  
+  .intro p {
+    font-size: 16px;
+    color: var(--gray-light);
+    margin-bottom: 16px;
+  }
+  
+  .intro .lead {
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  
+  /* === 시기 섹션 === */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  
+  .section-year {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--gold-bright);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    color: var(--white);
+    margin-top: 8px;
+    font-weight: 700;
+  }
+  
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 16px auto 0;
+  }
+  
+  .section-count {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 12px;
+    letter-spacing: 0.05em;
+  }
+  
+  /* === 사진 그리드 === */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .photo-card {
+    background: var(--navy-mid);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(201, 169, 97, 0.15);
+  }
+  
+  .photo-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  }
+  
+  .photo-card.featured {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.3);
+  }
+  
+  .photo-img-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--navy-deep);
+  }
+  
+  .photo-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+  
+  .photo-card:hover .photo-img-wrap img {
+    transform: scale(1.05);
+  }
+  
+  .photo-no {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(13, 27, 51, 0.85);
+    color: var(--gold);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  .photo-featured-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  
+  .photo-info {
+    padding: 16px 18px;
+  }
+  
+  .photo-date {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  
+  .photo-caption {
+    font-size: 14px;
+    color: var(--gray-light);
+    line-height: 1.5;
+  }
+  
+  /* === 라이트박스 === */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .lightbox.active {
+    display: flex;
+  }
+  
+  .lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+  }
+  
+  .lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 2px solid var(--gold);
+  }
+  
+  .lightbox-info {
+    color: var(--white);
+    margin-top: 20px;
+  }
+  
+  .lightbox-info .date {
+    font-size: 16px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .lightbox-info .caption {
+    font-size: 14px;
+    color: var(--gray-light);
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(201, 169, 97, 0.2);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    transition: all 0.2s;
+  }
+  
+  .lightbox-nav:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  
+  .lightbox-prev { left: 20px; }
+  .lightbox-next { right: 20px; }
+  
+  /* === 하단 YouTube CTA === */
+  .youtube-cta {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    padding: 80px 24px;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 3px solid var(--gold);
+  }
+  
+  .youtube-cta-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .youtube-cta-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  
+  .youtube-cta-desc {
+    font-size: 16px;
+    color: var(--gray-light);
+    margin-bottom: 36px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .youtube-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #FF0000;
+    color: var(--white);
+    padding: 18px 40px;
+    border-radius: 32px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.3);
+  }
+  
+  .youtube-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 0, 0, 0.45);
+  }
+  
+  .youtube-btn svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+  }
+  
+  .youtube-cta-meta {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  
+  /* === 푸터 === */
+  footer {
+    background: var(--navy-deep);
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  
+  .slogan {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+  
+  .footer-info {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+  
+  .footer-info strong {
+    color: var(--gray-light);
+  }
+  
+  /* === 모바일 === */
+  @media (max-width: 640px) {
+    .hero { padding: 60px 20px 40px; }
+    .hero-title { font-size: 48px; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .photo-info { padding: 12px; }
+    .photo-caption { font-size: 12px; }
+    .lightbox-nav { width: 40px; height: 40px; font-size: 18px; }
+  }
+  
+  @media (max-width: 380px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BGM 컨트롤 (sticky) -->
+<div class="bgm-bar">
+  <button id="bgmBtn" class="bgm-btn" aria-label="BGM 재생">
+    <span id="bgmIcon">▶</span>
+    <span id="bgmText">BGM 재생</span>
+  </button>
+  <span class="bgm-status">EP1 「창단의 열정」 음악 — 어쿠스틱 기타</span>
+  <audio id="bgmAudio" loop preload="auto">
+    <source src="audio/ep1_bgm.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- 히어로 -->
+<header class="hero">
+  <div class="hero-label">SINCE 2007 · 20주년</div>
+  <h1 class="hero-title">
+    창단의<br>
+    <span class="gold">열정</span>
+  </h1>
+  <p class="hero-sub">익산 부송 배드민턴 클럽 20주년 영상 시리즈 EP1<br>2007~2010 사진 아카이브 · 31장</p>
+  <div class="hero-meta">
+    <span>2026.8.3 공개</span>·<span>D-75</span>·<span>1분 50초</span>
+  </div>
+</header>
+
+<!-- 인트로 -->
+<section class="intro">
+  <p class="lead">2007년 1월 6일, 부송중학교 체육관.</p>
+  <p>그날부터 2010년까지의 31장.<br>
+  카페 게시판 깊숙이 잠들어 있던 사진들을 모두 꺼내어 날짜순으로 정리했습니다.</p>
+  <p style="color: var(--gold); margin-top: 24px; font-size: 14px;">사진을 클릭하면 크게 볼 수 있습니다.</p>
+</section>
+
+<!-- 시기별 갤러리 (JS로 동적 생성) -->
+<main>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-year">2007</div>
+        <div class="section-title">시작과 창단</div>
+        <div class="section-divider"></div>
+        <div class="section-count">3장의 기록</div>
+      </div>
+      <div class="grid">
+        <div class="photo-card featured" data-idx="0">
+          <div class="photo-img-wrap">
+            <img src="photos/01_20070106__Ub2e4_Uc6b4_Ub85c_Ub4dc.jpg" alt="2007년 1월 6일" loading="lazy">
+            <div class="photo-no">No. 01</div>
+            <div class="photo-featured-badge">⭐ 핵심</div>
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2007년 1월 6일</div>
+            <div class="photo-caption">회장취임식 및 부송클럽 월례대회 — 부송중학교 체육관</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="1">
+          <div class="photo-img-wrap">
+            <img src="photos/02_20071017_17_cafe_2007_10_17_23_30_47161c7805ee9.jpg" alt="2007년 10월 17일" loading="lazy">
+            <div class="photo-no">No. 02</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2007년 10월 17일</div>
+            <div class="photo-caption">코트 위 활기찬 모습</div>
+          </div>
+        </div>
+        <div class="photo-card featured" data-idx="2">
+          <div class="photo-img-wrap">
+            <img src="photos/03_20071108_8_cafe_2007_11_08_17_47_4732cca7177fe.jpg" alt="2007년 11월 8일" loading="lazy">
+            <div class="photo-no">No. 03</div>
+            <div class="photo-featured-badge">⭐ 핵심</div>
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2007년 11월 8일</div>
+            <div class="photo-caption">부송 배드민턴 클럽 1주년 및 창단식 — 현수막 명확</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-year">2008</div>
+        <div class="section-title">활동의 다각화</div>
+        <div class="section-divider"></div>
+        <div class="section-count">14장의 기록</div>
+      </div>
+      <div class="grid">
+        <div class="photo-card " data-idx="3">
+          <div class="photo-img-wrap">
+            <img src="photos/04_20080303_14_cafe_2008_03_03_23_51_47cc103c6f72b.jpg" alt="2008년 3월 3일" loading="lazy">
+            <div class="photo-no">No. 04</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 3월 3일</div>
+            <div class="photo-caption">2008년 3월 3일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="4">
+          <div class="photo-img-wrap">
+            <img src="photos/05_20080416_1_cafe_2008_04_16_00_02_4804c24f8cfda.jpg" alt="2008년 4월 16일" loading="lazy">
+            <div class="photo-no">No. 05</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 4월 16일</div>
+            <div class="photo-caption">2008년 4월 16일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="5">
+          <div class="photo-img-wrap">
+            <img src="photos/06_20080416_9_cafe_2008_04_16_00_02_4804c2c20c0a9.jpg" alt="2008년 4월 16일" loading="lazy">
+            <div class="photo-no">No. 06</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 4월 16일</div>
+            <div class="photo-caption">2008년 4월 16일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="6">
+          <div class="photo-img-wrap">
+            <img src="photos/07_20080418_16_cafe_2008_04_18_01_39_48077a39e8f9a.jpg" alt="2008년 4월 18일" loading="lazy">
+            <div class="photo-no">No. 07</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 4월 18일</div>
+            <div class="photo-caption">2008년 4월 18일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="7">
+          <div class="photo-img-wrap">
+            <img src="photos/08_20080426_5_cafe_2008_04_26_23_50_48134019eb87c.jpg" alt="2008년 4월 26일" loading="lazy">
+            <div class="photo-no">No. 08</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 4월 26일</div>
+            <div class="photo-caption">2008년 4월 26일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="8">
+          <div class="photo-img-wrap">
+            <img src="photos/09_20080427_10_cafe_2008_04_27_00_04_481343b6b25b0.jpg" alt="2008년 4월 27일" loading="lazy">
+            <div class="photo-no">No. 09</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 4월 27일</div>
+            <div class="photo-caption">2008년 4월 27일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="9">
+          <div class="photo-img-wrap">
+            <img src="photos/10_20080427_3_cafe_2008_04_27_00_04_48134452edebe.jpg" alt="2008년 4월 27일" loading="lazy">
+            <div class="photo-no">No. 10</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 4월 27일</div>
+            <div class="photo-caption">2008년 4월 27일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="10">
+          <div class="photo-img-wrap">
+            <img src="photos/11_20080501_14_cafe_2008_05_01_09_42_48190f861c8a1.jpg" alt="2008년 5월 1일" loading="lazy">
+            <div class="photo-no">No. 11</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 5월 1일</div>
+            <div class="photo-caption">2008년 5월 1일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="11">
+          <div class="photo-img-wrap">
+            <img src="photos/12_20080501_4_cafe_2008_05_01_09_42_48191083e72cd.jpg" alt="2008년 5월 1일" loading="lazy">
+            <div class="photo-no">No. 12</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 5월 1일</div>
+            <div class="photo-caption">2008년 5월 1일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="12">
+          <div class="photo-img-wrap">
+            <img src="photos/13_20080522_13_cafe_2008_05_22_18_38_48353ec17f5b1.jpg" alt="2008년 5월 22일" loading="lazy">
+            <div class="photo-no">No. 13</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 5월 22일</div>
+            <div class="photo-caption">2008년 5월 22일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="13">
+          <div class="photo-img-wrap">
+            <img src="photos/14_20080522_7_cafe_2008_05_22_18_37_48353eab67718.jpg" alt="2008년 5월 22일" loading="lazy">
+            <div class="photo-no">No. 14</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 5월 22일</div>
+            <div class="photo-caption">2008년 5월 22일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="14">
+          <div class="photo-img-wrap">
+            <img src="photos/15_20080713_6_cafe_2008_07_13_13_07_48797ea38041a.jpg" alt="2008년 7월 13일" loading="lazy">
+            <div class="photo-no">No. 15</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 7월 13일</div>
+            <div class="photo-caption">2008년 7월 13일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card featured" data-idx="15">
+          <div class="photo-img-wrap">
+            <img src="photos/16_20081015_15_cafe_2008_10_15_17_22_48f5a7b9949c4.jpg" alt="2008년 10월 15일" loading="lazy">
+            <div class="photo-no">No. 16</div>
+            <div class="photo-featured-badge">⭐ 핵심</div>
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 10월 15일</div>
+            <div class="photo-caption">부송배드민턴클럽 창립 2주년 기념 (2008.10.12)</div>
+          </div>
+        </div>
+        <div class="photo-card featured" data-idx="16">
+          <div class="photo-img-wrap">
+            <img src="photos/17_20081015_4_cafe_2008_10_15_16_23_48f59a5134037.jpg" alt="2008년 10월 15일" loading="lazy">
+            <div class="photo-no">No. 17</div>
+            <div class="photo-featured-badge">⭐ 핵심</div>
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2008년 10월 15일</div>
+            <div class="photo-caption">부송배드민턴클럽 창립 2주년 기념 (2008.10.12)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-year">2009</div>
+        <div class="section-title">성장하는 부송</div>
+        <div class="section-divider"></div>
+        <div class="section-count">6장의 기록</div>
+      </div>
+      <div class="grid">
+        <div class="photo-card " data-idx="17">
+          <div class="photo-img-wrap">
+            <img src="photos/18_20090712_145151144CB34130C7.jpg" alt="2009년 7월 12일" loading="lazy">
+            <div class="photo-no">No. 18</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2009년 7월 12일</div>
+            <div class="photo-caption">2009년 7월 12일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="18">
+          <div class="photo-img-wrap">
+            <img src="photos/19_20090830_133D32284A9B1A2288.jpg" alt="2009년 8월 30일" loading="lazy">
+            <div class="photo-no">No. 19</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2009년 8월 30일</div>
+            <div class="photo-caption">2009년 8월 30일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="19">
+          <div class="photo-img-wrap">
+            <img src="photos/20_20090830_153D32284A9B1A2389.jpg" alt="2009년 8월 30일" loading="lazy">
+            <div class="photo-no">No. 20</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2009년 8월 30일</div>
+            <div class="photo-caption">2009년 8월 30일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="20">
+          <div class="photo-img-wrap">
+            <img src="photos/21_20091108_146704144AF8395D3F.jpg" alt="2009년 11월 8일" loading="lazy">
+            <div class="photo-no">No. 21</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2009년 11월 8일</div>
+            <div class="photo-caption">2009년 11월 8일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="21">
+          <div class="photo-img-wrap">
+            <img src="photos/22_20091108_151155104AF83A256C.jpg" alt="2009년 11월 8일" loading="lazy">
+            <div class="photo-no">No. 22</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2009년 11월 8일</div>
+            <div class="photo-caption">2009년 11월 8일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="22">
+          <div class="photo-img-wrap">
+            <img src="photos/23_20091108_156704144AF8396C42.jpg" alt="2009년 11월 8일" loading="lazy">
+            <div class="photo-no">No. 23</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2009년 11월 8일</div>
+            <div class="photo-caption">2009년 11월 8일 활동 기록</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-year">2010</div>
+        <div class="section-title">함께 자란 시간</div>
+        <div class="section-divider"></div>
+        <div class="section-count">8장의 기록</div>
+      </div>
+      <div class="grid">
+        <div class="photo-card " data-idx="23">
+          <div class="photo-img-wrap">
+            <img src="photos/24_20100307_184BAE1E4C177CC542.jpg" alt="2010년 3월 7일" loading="lazy">
+            <div class="photo-no">No. 24</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 3월 7일</div>
+            <div class="photo-caption">2010년 3월 7일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="24">
+          <div class="photo-img-wrap">
+            <img src="photos/25_20100307_204BAE1E4C177CC23B.jpg" alt="2010년 3월 7일" loading="lazy">
+            <div class="photo-no">No. 25</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 3월 7일</div>
+            <div class="photo-caption">2010년 3월 7일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="25">
+          <div class="photo-img-wrap">
+            <img src="photos/26_20100404_111DC2054BB99A8949.jpg" alt="2010년 4월 4일" loading="lazy">
+            <div class="photo-no">No. 26</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 4월 4일</div>
+            <div class="photo-caption">2010년 4월 4일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="26">
+          <div class="photo-img-wrap">
+            <img src="photos/27_20100404_201DC2054BB99A894B.jpg" alt="2010년 4월 4일" loading="lazy">
+            <div class="photo-no">No. 27</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 4월 4일</div>
+            <div class="photo-caption">2010년 4월 4일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="27">
+          <div class="photo-img-wrap">
+            <img src="photos/28_20100530_CAM_0182.jpg" alt="2010년 5월 30일" loading="lazy">
+            <div class="photo-no">No. 28</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 5월 30일</div>
+            <div class="photo-caption">2010년 5월 30일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="28">
+          <div class="photo-img-wrap">
+            <img src="photos/29_20100620_SN202761.jpg" alt="2010년 6월 20일" loading="lazy">
+            <div class="photo-no">No. 29</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 6월 20일</div>
+            <div class="photo-caption">2010년 6월 20일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="29">
+          <div class="photo-img-wrap">
+            <img src="photos/30_20100620_SN202788.jpg" alt="2010년 6월 20일" loading="lazy">
+            <div class="photo-no">No. 30</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 6월 20일</div>
+            <div class="photo-caption">2010년 6월 20일 활동 기록</div>
+          </div>
+        </div>
+        <div class="photo-card " data-idx="30">
+          <div class="photo-img-wrap">
+            <img src="photos/31_20101219_151A493D4D0EDD9909.jpg" alt="2010년 12월 19일" loading="lazy">
+            <div class="photo-no">No. 31</div>
+            
+          </div>
+          <div class="photo-info">
+            <div class="photo-date">2010년 12월 19일</div>
+            <div class="photo-caption">2010년 12월 19일 활동 기록</div>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- YouTube CTA -->
+<section class="youtube-cta">
+  <div class="youtube-cta-label">▶ FULL VIDEO</div>
+  <h2 class="youtube-cta-title">EP1 영상 전편 보기</h2>
+  <p class="youtube-cta-desc">
+    이 31장의 사진이 1분 50초의 영상으로 다시 살아납니다.<br>
+    YouTube에서 본편을 시청하세요.
+  </p>
+  <a href="https://youtu.be/JQR5NXnqrPc" target="_blank" rel="noopener" class="youtube-btn">
+    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    YouTube에서 영상 보기
+  </a>
+  <div class="youtube-cta-meta">
+    https://youtu.be/JQR5NXnqrPc · 1분 50초
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer>
+  <div class="slogan">하나되는 우리!  승리하는 부송!</div>
+  <div class="footer-info">
+    <strong>익산 부송 배드민턴 클럽</strong>  ·  창단 2007년 1월<br>
+    20주년 영상 시리즈 기획 총괄 · 김만민 남부회장<br>
+    발신·승인 · 김종왕 회장<br><br>
+    BUSONG · 2007~2026
+  </div>
+</footer>
+
+<!-- 라이트박스 -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" aria-label="닫기">✕</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="이전">‹</button>
+  <button class="lightbox-nav lightbox-next" aria-label="다음">›</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-info">
+      <div class="date" id="lightboxDate"></div>
+      <div class="caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const PHOTOS = [{"file": "01_20070106__Ub2e4_Uc6b4_Ub85c_Ub4dc.jpg", "date_kor": "2007년 1월 6일", "caption": "회장취임식 및 부송클럽 월례대회 — 부송중학교 체육관"}, {"file": "02_20071017_17_cafe_2007_10_17_23_30_47161c7805ee9.jpg", "date_kor": "2007년 10월 17일", "caption": "코트 위 활기찬 모습"}, {"file": "03_20071108_8_cafe_2007_11_08_17_47_4732cca7177fe.jpg", "date_kor": "2007년 11월 8일", "caption": "부송 배드민턴 클럽 1주년 및 창단식 — 현수막 명확"}, {"file": "04_20080303_14_cafe_2008_03_03_23_51_47cc103c6f72b.jpg", "date_kor": "2008년 3월 3일", "caption": "2008년 3월 3일 활동 기록"}, {"file": "05_20080416_1_cafe_2008_04_16_00_02_4804c24f8cfda.jpg", "date_kor": "2008년 4월 16일", "caption": "2008년 4월 16일 활동 기록"}, {"file": "06_20080416_9_cafe_2008_04_16_00_02_4804c2c20c0a9.jpg", "date_kor": "2008년 4월 16일", "caption": "2008년 4월 16일 활동 기록"}, {"file": "07_20080418_16_cafe_2008_04_18_01_39_48077a39e8f9a.jpg", "date_kor": "2008년 4월 18일", "caption": "2008년 4월 18일 활동 기록"}, {"file": "08_20080426_5_cafe_2008_04_26_23_50_48134019eb87c.jpg", "date_kor": "2008년 4월 26일", "caption": "2008년 4월 26일 활동 기록"}, {"file": "09_20080427_10_cafe_2008_04_27_00_04_481343b6b25b0.jpg", "date_kor": "2008년 4월 27일", "caption": "2008년 4월 27일 활동 기록"}, {"file": "10_20080427_3_cafe_2008_04_27_00_04_48134452edebe.jpg", "date_kor": "2008년 4월 27일", "caption": "2008년 4월 27일 활동 기록"}, {"file": "11_20080501_14_cafe_2008_05_01_09_42_48190f861c8a1.jpg", "date_kor": "2008년 5월 1일", "caption": "2008년 5월 1일 활동 기록"}, {"file": "12_20080501_4_cafe_2008_05_01_09_42_48191083e72cd.jpg", "date_kor": "2008년 5월 1일", "caption": "2008년 5월 1일 활동 기록"}, {"file": "13_20080522_13_cafe_2008_05_22_18_38_48353ec17f5b1.jpg", "date_kor": "2008년 5월 22일", "caption": "2008년 5월 22일 활동 기록"}, {"file": "14_20080522_7_cafe_2008_05_22_18_37_48353eab67718.jpg", "date_kor": "2008년 5월 22일", "caption": "2008년 5월 22일 활동 기록"}, {"file": "15_20080713_6_cafe_2008_07_13_13_07_48797ea38041a.jpg", "date_kor": "2008년 7월 13일", "caption": "2008년 7월 13일 활동 기록"}, {"file": "16_20081015_15_cafe_2008_10_15_17_22_48f5a7b9949c4.jpg", "date_kor": "2008년 10월 15일", "caption": "부송배드민턴클럽 창립 2주년 기념 (2008.10.12)"}, {"file": "17_20081015_4_cafe_2008_10_15_16_23_48f59a5134037.jpg", "date_kor": "2008년 10월 15일", "caption": "부송배드민턴클럽 창립 2주년 기념 (2008.10.12)"}, {"file": "18_20090712_145151144CB34130C7.jpg", "date_kor": "2009년 7월 12일", "caption": "2009년 7월 12일 활동 기록"}, {"file": "19_20090830_133D32284A9B1A2288.jpg", "date_kor": "2009년 8월 30일", "caption": "2009년 8월 30일 활동 기록"}, {"file": "20_20090830_153D32284A9B1A2389.jpg", "date_kor": "2009년 8월 30일", "caption": "2009년 8월 30일 활동 기록"}, {"file": "21_20091108_146704144AF8395D3F.jpg", "date_kor": "2009년 11월 8일", "caption": "2009년 11월 8일 활동 기록"}, {"file": "22_20091108_151155104AF83A256C.jpg", "date_kor": "2009년 11월 8일", "caption": "2009년 11월 8일 활동 기록"}, {"file": "23_20091108_156704144AF8396C42.jpg", "date_kor": "2009년 11월 8일", "caption": "2009년 11월 8일 활동 기록"}, {"file": "24_20100307_184BAE1E4C177CC542.jpg", "date_kor": "2010년 3월 7일", "caption": "2010년 3월 7일 활동 기록"}, {"file": "25_20100307_204BAE1E4C177CC23B.jpg", "date_kor": "2010년 3월 7일", "caption": "2010년 3월 7일 활동 기록"}, {"file": "26_20100404_111DC2054BB99A8949.jpg", "date_kor": "2010년 4월 4일", "caption": "2010년 4월 4일 활동 기록"}, {"file": "27_20100404_201DC2054BB99A894B.jpg", "date_kor": "2010년 4월 4일", "caption": "2010년 4월 4일 활동 기록"}, {"file": "28_20100530_CAM_0182.jpg", "date_kor": "2010년 5월 30일", "caption": "2010년 5월 30일 활동 기록"}, {"file": "29_20100620_SN202761.jpg", "date_kor": "2010년 6월 20일", "caption": "2010년 6월 20일 활동 기록"}, {"file": "30_20100620_SN202788.jpg", "date_kor": "2010년 6월 20일", "caption": "2010년 6월 20일 활동 기록"}, {"file": "31_20101219_151A493D4D0EDD9909.jpg", "date_kor": "2010년 12월 19일", "caption": "2010년 12월 19일 활동 기록"}];
+  
+  // === 라이트박스 ===
+  let currentIdx = 0;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbDate = document.getElementById('lightboxDate');
+  const lbCap = document.getElementById('lightboxCaption');
+  
+  function openLightbox(idx) {
+    currentIdx = idx;
+    const p = PHOTOS[idx];
+    lbImg.src = `photos/${p.file}`;
+    lbDate.textContent = p.date_kor;
+    lbCap.textContent = p.caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  function navLightbox(dir) {
+    currentIdx = (currentIdx + dir + PHOTOS.length) % PHOTOS.length;
+    openLightbox(currentIdx);
+  }
+  
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.photo-card');
+    if (card) {
+      const idx = parseInt(card.dataset.idx);
+      if (!isNaN(idx)) openLightbox(idx);
+    }
+  });
+  
+  document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); navLightbox(-1); });
+  document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); navLightbox(1); });
+  
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) closeLightbox();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+  });
+  
+  // === BGM 컨트롤 ===
+  const bgmBtn = document.getElementById('bgmBtn');
+  const bgmIcon = document.getElementById('bgmIcon');
+  const bgmText = document.getElementById('bgmText');
+  const bgmAudio = document.getElementById('bgmAudio');
+  
+  bgmAudio.volume = 0.4;
+  
+  bgmBtn.addEventListener('click', () => {
+    if (bgmAudio.paused) {
+      bgmAudio.play().catch(err => console.log('재생 실패:', err));
+      bgmIcon.textContent = '❚❚';
+      bgmText.textContent = 'BGM 일시정지';
+      bgmBtn.classList.add('playing');
+    } else {
+      bgmAudio.pause();
+      bgmIcon.textContent = '▶';
+      bgmText.textContent = 'BGM 재생';
+      bgmBtn.classList.remove('playing');
+    }
+  });
+</script>
+
+</body>
+</html>

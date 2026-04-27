@@ -12,7 +12,7 @@
 <!-- 기본 OG -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="부송 20주년 EP1 「창단의 열정」 — 31장의 기록">
-<meta property="og:description" content="2007~2010 익산 부송 배드민턴 클럽 창단 초기 사진 31장. EP1 BGM과 함께 시기별로 정리된 사진 아카이브.">
+<meta property="og:description" content="2007~2010 익산 부송 배드민턴 클럽 창단 초기 사진 31장과 20주년 메인 영상까지. EP1 BGM과 함께 시기별로 정리된 사진 아카이브.">
 <meta property="og:image" content="https://__SITE_URL__/og/share-card.jpg">
 <meta property="og:image:secure_url" content="https://__SITE_URL__/og/share-card.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -26,7 +26,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="부송 20주년 EP1 「창단의 열정」 — 31장의 기록">
-<meta name="twitter:description" content="2007~2010 익산 부송 배드민턴 클럽 창단 초기 사진 31장. EP1 BGM과 함께.">
+<meta name="twitter:description" content="2007~2010 사진 31장 + 20주년 메인 영상까지 — EP1 BGM과 함께.">
 <meta name="twitter:image" content="https://__SITE_URL__/og/share-card.jpg">
 
 <!-- 카카오톡 권장 (보강) -->
@@ -626,6 +626,180 @@
     font-size: 18px;
   }
 
+
+  /* === 메인 종합 영상 CTA (NEW) === */
+  .main-video-cta {
+    background: linear-gradient(135deg, #0D1B33 0%, #1A2A45 50%, #0D1B33 100%);
+    padding: 90px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .main-video-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(201, 169, 97, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .main-video-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 0 0 4px 4px;
+  }
+  
+  .main-video-label {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-video-title {
+    font-size: clamp(32px, 5.5vw, 48px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-video-title .accent {
+    color: var(--gold-bright);
+  }
+  
+  .main-video-subtitle {
+    font-size: clamp(15px, 2.2vw, 18px);
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-video-desc {
+    font-size: 15px;
+    color: var(--gray-light);
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* 챕터 리스트 */
+  .main-video-chapters {
+    max-width: 520px;
+    margin: 0 auto 36px;
+    text-align: left;
+    background: rgba(13, 27, 51, 0.4);
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    border-radius: 10px;
+    padding: 22px 28px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-video-chapters-title {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  
+  .main-video-chapters ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .main-video-chapters li {
+    padding: 8px 0;
+    color: var(--gray-light);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.08);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  
+  .main-video-chapters li:last-child { border-bottom: none; }
+  
+  .main-video-chapters .time {
+    color: var(--gold);
+    font-weight: 700;
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 13px;
+    min-width: 50px;
+  }
+  
+  .main-video-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+    color: var(--white);
+    padding: 20px 44px;
+    border-radius: 36px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.35);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-video-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(255, 0, 0, 0.5);
+  }
+  
+  .main-video-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+  }
+  
+  .main-video-meta {
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--gray);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-video-meta strong {
+    color: var(--gold);
+  }
+  
+  /* 모바일 */
+  @media (max-width: 640px) {
+    .main-video-cta { padding: 60px 16px; }
+    .main-video-chapters { padding: 18px 20px; }
+    .main-video-chapters li { font-size: 13px; gap: 10px; }
+    .main-video-btn { padding: 16px 32px; font-size: 15px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1080,6 +1254,46 @@
   </div>
 </section>
 
+
+<!-- ============================================ -->
+<!-- 메인 종합 영상 CTA — 20주년 전체 이야기 -->
+<!-- ============================================ -->
+<section class="main-video-cta">
+  <div class="main-video-label">★ MAIN VIDEO</div>
+  <h2 class="main-video-title">
+    20년의 한마음,<br>
+    <span class="accent">부송의 이야기</span>
+  </h2>
+  <p class="main-video-subtitle">2007 → 2026, 20년 전체 서사를 담은 종합 영상</p>
+  <p class="main-video-desc">
+    EP1이 「창단의 열정」을 담았다면,<br>
+    이 영상은 <strong style="color: var(--gold);">2007년 첫걸음부터 2026년 오늘까지</strong>의<br>
+    20년 전체 이야기를 한 편에 모은 종합 영상입니다.
+  </p>
+  
+  <div class="main-video-chapters">
+    <div class="main-video-chapters-title">▷ CHAPTERS</div>
+    <ul>
+      <li><span class="time">00:00</span><span>오프닝 — 20년의 시작</span></li>
+      <li><span class="time">01:00</span><span>2007 ~ 2015  창단 초기의 추억</span></li>
+      <li><span class="time">02:30</span><span>2016 ~ 2020  함께 성장한 시간</span></li>
+      <li><span class="time">04:00</span><span>2021 ~ 2026  코로나를 넘어 오늘까지</span></li>
+      <li><span class="time">06:00</span><span>역대 회장단과 함께한 회원들</span></li>
+      <li><span class="time">06:40</span><span>다음 20년을 향하여</span></li>
+    </ul>
+  </div>
+  
+  <a href="https://youtu.be/SF9k0U0KqrY" target="_blank" rel="noopener" class="main-video-btn">
+    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    20주년 전체 영상 보기
+  </a>
+  
+  <div class="main-video-meta">
+    <strong>약 7분</strong>  ·  https://youtu.be/SF9k0U0KqrY  ·  2026.4.13 공개
+  </div>
+</section>
+
+
 <!-- 푸터 -->
 <footer>
   <div class="slogan">하나되는 우리!  승리하는 부송!</div>
@@ -1087,7 +1301,11 @@
     <strong>익산 부송 배드민턴 클럽</strong>  ·  창단 2007년 1월<br>
     20주년 영상 시리즈 기획 총괄 · 김만민 남부회장<br>
     발신·승인 · 김종왕 회장<br><br>
-    BUSONG · 2007~2026
+    BUSONG · 2007~2026<br><br>
+    <a href="https://youtu.be/SF9k0U0KqrY" target="_blank" rel="noopener" 
+       style="color: var(--gold); text-decoration: none; font-size: 11px;">
+      ▶ 20주년 전체 영상 다시 보기
+    </a>
   </div>
 </footer>
 
